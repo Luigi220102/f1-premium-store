@@ -1,0 +1,340 @@
+/* 1. Estilos Generales: El asfalto de la pista */
+body {
+    background-color: #1a1a1a; /* Negro oscuro como la fibra de carbono */
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. El Encabezado: Color oficial de la F1 */
+header {
+    background-color: #e10600; /* Rojo F1 */
+    padding: 20px;
+    text-align: center;
+}
+
+/* 3. La Parrilla de Salida (Flexbox): Esto ordena tus carros */
+#tienda {
+    display: flex;
+    flex-wrap: wrap; /* Si no caben, se pasan abajo */
+    justify-content: center; /* Los centra en la pantalla */
+    padding: 40px;
+    gap: 20px; /* Espacio entre cada carro */
+    
+}
+
+#tienda {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra los carros si sobran espacios */
+    gap: 30px;
+    padding: 40px 20px;
+}
+
+/* --- Título del Catálogo --- */
+#tienda h2 {
+    text-align: center; /* Esto es lo que lo mueve al medio */
+    width: 100%;       /* Asegura que ocupe todo el ancho para poder centrarse */
+    margin-bottom: 40px; /* Un poco de espacio extra abajo para que no se pegue a los carros */
+    font-size: 2.5em;  /* Hacemos la letra un poco más grande y llamativa */
+    text-transform: uppercase; /* Opcional: lo pone en mayúsculas para más impacto */
+    letter-spacing: 2px; /* Opcional: separa un poco las letras */
+}
+
+/* 4. Tarjeta de Carro: Cada monoplaza en su box */
+.carro {
+    background-color: #2d2d2d;
+    border-radius: 15px;
+    padding: 20px;
+    width: 300px; /* Tamaño fijo para que todos sean iguales */
+    text-align: center;
+    border-bottom: 4px solid #e10600;
+}
+
+/* 5. Ajuste de Imágenes: ¡Ya no serán gigantes! */
+.carro img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    /* Suaviza el movimiento */
+    transition: transform 0.5s ease; 
+}
+
+/* Cuando pasas el mouse (o el dedo en el Huawei) */
+.carro:hover img {
+    transform: scale(1.1); /* Hace un zoom del 10% */
+}
+
+/* 6. Botones: El acelerador */
+button {
+    background-color: #e10600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: white;
+    color: #e10600;
+}
+
+/* Ajustes para el Header: Alineación de Logo y Menú */
+header {
+    background-color: #e10600; /* Rojo F1 */
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between; /* Manda el logo a la izquierda y el menú a la derecha */
+    align-items: center; /* Centra todo verticalmente */
+    position: sticky; /* Se queda fija arriba al bajar la página */
+    top: 0;
+    z-index: 1000; /* Asegura que siempre esté por encima de las imágenes */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Sombra elegante */
+}
+
+/* Estilo del Logo */
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Estilo de la Lista de Navegación */
+nav ul {
+    list-style: none; /* Quita los puntos de la lista */
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-left: 30px; /* Espacio entre cada enlace */
+}
+
+nav a {
+    text-decoration: none; /* Quita el subrayado */
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: 0.3s; /* Suaviza el cambio de color al pasar el mouse */
+}
+
+/* Efecto al pasar el mouse (Hover) */
+nav a:hover {
+    color: #1a1a1a; /* Cambia a negro fibra de carbono */
+}
+
+/* --- DISEÑO PARA CELULARES (Pantallas menores a 768px) --- */
+@media (max-width: 768px) {
+    
+    /* 1. La barra de navegación se vuelve vertical */
+    header {
+        flex-direction: column; /* Pone el logo arriba y el menú abajo */
+        padding: 20px;
+    }
+
+    nav li {
+        margin: 10px 0; /* Espacio vertical entre botones */
+    }
+
+    nav ul {
+        flex-direction: column; /* Los enlaces se apilan uno sobre otro */
+        text-align: center;
+    }
+
+    /* 2. El catálogo se vuelve una sola columna */
+    #tienda {
+        padding: 10px;
+    }
+
+    .carro {
+        width: 90%; /* Las tarjetas ocupan casi todo el ancho del cel */
+        margin: 0 auto;
+    }
+}
+
+/* Estilos para el botón de WhatsApp */
+.whatsapp-btn {
+    position: fixed; /* Se queda fijo en la pantalla */
+    bottom: 20px;    /* Distancia desde abajo */
+    right: 20px;     /* Distancia desde la derecha */
+    background-color: #25d366; /* Verde oficial de WhatsApp */
+    color: white;
+    font-size: 35px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Lo hace circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000; /* Siempre por encima de todo */
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128c7e; /* Un verde más oscuro al pasar el mouse */
+    transform: scale(1.1); /* Se hace un poquito más grande */
+}
+
+/* El contenedor del Modal (fondo oscuro) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    /* ESTA ES LA LÍNEA CLAVE: */
+    overflow-y: auto; 
+}
+
+/* También vamos a mejorar el tamaño en móviles */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%; /* En tu Huawei ocupará casi toda la pantalla */
+        margin: 20% auto;
+    }
+}
+
+/* La caja blanca/gris del centro */
+.modal-content {
+    background-color: #2d2d2d;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #e10600;
+    width: 50%;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Botón de cerrar (X) */
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #e10600;
+}
+
+/* Contenedor que cubre toda la pantalla */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1a1a1a; /* Negro fibra de carbono */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000; /* Por encima de todo, incluso del modal */
+    transition: opacity 0.5s ease;
+}
+
+/* El círculo que gira */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #333;
+    border-top: 5px solid #e10600; /* Rojo F1 */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Animación del giro */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#loader p {
+    color: white;
+    margin-top: 15px;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.parallax {
+    /* Cambia este enlace por una foto épica de un circuito de F1 */
+    background-image: url('https://images.unsplash.com/photo-1533130061792-64b345e4a833?w=1200');
+    height: 400px;
+    background-attachment: fixed; /* ESTO crea el efecto Parallax */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.parallax-content {
+    background-color: rgba(225, 6, 0, 0.7); /* Rojo F1 con transparencia */
+    padding: 30px;
+    border-radius: 10px;
+}
+
+/* --- Estilos de la Sección de Contacto --- */
+#contacto {
+    padding: 50px;
+    background-color: #2d2d2d; /* Fondo gris oscuro */
+    text-align: center;
+}
+
+#contacto h2 {
+    color: #e10600; /* Rojo F1 */
+    margin-bottom: 30px;
+}
+
+/* El contenedor del formulario */
+#f1-form {
+    max-width: 500px; /* Que no se haga muy ancho */
+    margin: 0 auto;   /* Centrado horizontalmente */
+    display: flex;
+    flex-direction: column; /* ¡Esto es lo que lo pone vertical! */
+    gap: 15px; /* Espacio entre cada campo */
+}
+
+/* Estilos para los campos (inputs, select y textarea) */
+#f1-form input,
+#f1-form select,
+#f1-form textarea {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    background-color: #444; /* Un gris un poco más claro para que resalte */
+    color: white;
+    font-family: sans-serif;
+}
+
+/* Estilo para el botón de enviar */
+#btn-enviar {
+    padding: 15px;
+    font-size: 16px;
+    background-color: #e10600;
+    transition: background-color 0.3s;
+}
+
+#btn-enviar:hover {
+    background-color: #ff1a1a; /* Un rojo más brillante al pasar el mouse */
+}
+
